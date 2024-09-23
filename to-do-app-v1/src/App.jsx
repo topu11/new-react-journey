@@ -4,10 +4,20 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import AppName from './components/AppName'
 import {AddToDO,ShowToDO} from './components/AddToDo'
-
+import TodoItems from './components/TodoItems'
 
 function App() {
  
+  const items=[
+    {
+      name:"drinking Tea",
+      date:"11/11/2024"
+    },
+    {
+       name:"drinking Milk",
+       date:"12/11/2024"
+    }
+  ]
 
   return (
     <>
@@ -15,8 +25,10 @@ function App() {
          <AppName />
          <div className="container">
           <AddToDO />
-          <ShowToDO name="drinking Tea" data="11/11/2024" />
-          <ShowToDO  name="drinking Milk" data="12/11/2024" />
+          <div className='show-list-container'>
+           <TodoItems items={items}/>
+          </div>
+          
          </div>
      </center>
     </>

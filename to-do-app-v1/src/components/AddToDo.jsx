@@ -11,7 +11,7 @@ export function AddToDO()
         <div className="col-md-4">
         <input type="date" className='form-control' id="" />
         </div>
-        <div className="col-md-3">
+        <div className="col-md-1">
         <button className='btn btn-success' data-id="12" onClick={()=>{ clickHandler('something')}}>ADD</button>
         
         </div>
@@ -19,21 +19,28 @@ export function AddToDO()
    )
 }
 
-export function ShowToDO(props)
+export function ShowToDO({item})
 {
-    const {name,date}=props;
-
-    return(
-    <div className="row mt-3">
+    const {name,date}=item;
+     console.log(name)
+    return(<>
+        <div className="row mt-3">
         <div className="col-md-4">
         { name ? name : "Rice"}
         </div>
         <div className="col-md-4">
-        { date ? data : "12/12/2023"}
+        { date ? date : "12/12/2023"}
         </div>
         <div className="col-md-3">
         <button className='btn btn-danger'>Delete</button>
         </div>
     </div>
-)
+    </>
+   );
+}
+
+
+export function ErrorList({})
+{
+    
 }

@@ -3,3 +3,15 @@
   margin:10px;
   color:blue
 }
+h1
+{
+  font-weight: 600
+}
+input
+{
+  width: 100%;
+}
+.show-list-container
+{
+  text-align: left;
+}

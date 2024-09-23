@@ -1,0 +1,12 @@
+.custom_container
+{
+    background-color: chocolate;
+    border: 1px solid blue;
+    padding: 15px;
+    text-align: center;
+    margin: 10px; 
+}
+.p_tag p
+{
+    font-weight: 900;
+}
