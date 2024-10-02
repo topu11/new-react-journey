@@ -24,7 +24,7 @@ function App() {
   const [todoItems,settodoItems]=useState([]);
 
   const handleDelete=(name)=>{
-    alert(name);
+    //alert(name);
        let newTodo=todoItems.filter((item)=>{
           return item.name !=name;
        })
@@ -34,6 +34,11 @@ function App() {
   
 
  async function addToDo(item_name,date){
+       if(!item_name || !date)
+       {
+          alert('Input Data');
+          return;
+       }
       let obj={
         name:item_name,
         date:date
