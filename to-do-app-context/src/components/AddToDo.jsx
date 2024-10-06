@@ -1,11 +1,12 @@
-import { useState,useRef } from "react";
+import { useState,useRef, useContext } from "react";
 import { IoIosAdd } from "react-icons/io";
+import {ItemContext} from '../store/items-context-store'
 
-export function AddToDO({addToDo})
+export function AddToDO()
 {
-    // const clickHandler=(a)=>{
-    //     alert(a);
-    // }
+   
+    const {addToDo}=useContext(ItemContext);
+
     const nameValue=useRef("");
     const dateValue=useRef("");
 
@@ -43,10 +44,10 @@ export function AddToDO({addToDo})
    )
 }
 
-export function ShowToDO({item,handleDelete})
+export function ShowToDO({item})
 {
     const {name,date}=item;
-     //console.log(name)
+    const {handleDelete}=useContext(ItemContext);
     return(<>
         <div className="row mt-3">
         <div className="col-md-4">
@@ -64,8 +65,9 @@ export function ShowToDO({item,handleDelete})
 }
 
 
-export  function WelcomeMessage({todoItems})
+export  function WelcomeMessage()
 {
+    const {todoItems}=useContext(ItemContext);
     return todoItems.length==0 && (<>
        <p className="bg-success">Enjoy Your Day</p>
     </>);

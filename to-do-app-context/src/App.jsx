@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import {ItemContext} from './store/items-context-store'
+
 import './App.css'
 import AppName from './components/AppName'
 import {AddToDO,WelcomeMessage} from './components/AddToDo'
@@ -80,19 +80,25 @@ function App() {
   }
 
   return (
+   <ItemContext.Provider value={{ 
+    todoItems:todoItems,
+    handleDelete:handleDelete,
+    addToDo:addToDo
+    }}>
     <>
      <center className="todo-container">
          <AppName />
          <div className="container">
-         <WelcomeMessage todoItems={todoItems} />
-          <AddToDO  addToDo={addToDo}/>
+         <WelcomeMessage  />
+          <AddToDO  />
           <div className='show-list-container'>
-           <TodoItems items={todoItems} handleDelete={handleDelete}/>
+           <TodoItems />
           </div>
           
          </div>
      </center>
     </>
+    </ItemContext.Provider>
   )
 }
 
