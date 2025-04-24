@@ -6,15 +6,25 @@ import FoodItem from './FoodTtem'
 import ErrorMessage from './ErrorMessage'
 
 function App() {
- // const bdFruits=['Banana','Jackfruit','Mango','Litchi','Papaya'];
-  const bdFruits=[];
+  const bdFruits=['Banana','Jackfruit','Mango','Litchi','Papaya'];
+  //const bdFruits=[];
+
+  const showMyName = (name) => {
+    alert(name);
+  };
  
   return (
     <>
       <h1>Bangladeshi foods</h1>
       <ErrorMessage bdFruits={bdFruits}/>
       <ul className="list-group">
-        {bdFruits.map((item)=><FoodItem item={item}/>)}
+      {bdFruits.map((item, index) => (
+          <FoodItem
+            key={index}
+            item={item}
+            showMyName={showMyName}
+          />
+        ))}
         
       </ul>
     </>
