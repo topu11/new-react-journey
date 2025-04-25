@@ -9,7 +9,10 @@ export default function Listwrapper({foods})
     {
        // console.log(event);
         alert(name_food);
-        setActive(name_food);
+        
+        let newFoodArray=[...Active,name_food];
+        //setFoods(newFoodArray)
+        setActive(newFoodArray);
     }
     return (
       <>
