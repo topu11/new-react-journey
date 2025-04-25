@@ -10,7 +10,9 @@ export default function Listwrapper({foods})
        // console.log(event);
         alert(name_food);
         
-        let newFoodArray=[...Active,name_food];
+        let newFoodArray=Active.includes(name_food)
+        ? Active.filter(food => food !== name_food) // Remove name_food if it exists
+        : [...Active, name_food];
         //setFoods(newFoodArray)
         setActive(newFoodArray);
     }
